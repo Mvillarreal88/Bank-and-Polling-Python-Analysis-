@@ -13,16 +13,20 @@ with open(csvpath) as csvfile:
     
     #Skipping the header row
     header = next(csvreader)
-    print(header)
 
     #Initialize variables that will store our data
     Total_months = 0
     Net_pl = []
-    Pl_changes = []
+    Pl_change = []
 
     for rows in csvreader:
         Total_months += 1
-        Net_pl.append(rows[1])
+        Net_pl.append(int(rows[1]))
 
+    #Calculating the average revenue changes
+    for value in range(1, len(Net_pl)):
+        Pl_change.append((int(Net_pl[value]) - int(Net_pl[value-1])))
+    
+    
+    Avergae_PL = sum(Pl_change) / len(Pl_change)
 
-print(Total_months)
