@@ -5,41 +5,24 @@ import csv
 
 #Set Path
 csvpath = os.path.join("Resources", "budget_data.csv")
- 
-#Initialize variables that will store our data
-Total_months = []
-Net_pl = []
-Pl_changes = []
 
 
-
-
-    #Open the CSV
-    with open(csvpath) as csvfile:
-        csvreader = csv.reader(csvfile, delimiter = ",")
+#Open the CSV
+with open(csvpath) as csvfile:
+    csvreader = csv.reader(csvfile, delimiter=',')
     
     #Skipping the header row
     header = next(csvreader)
+    print(header)
 
-    for row in csvreader:
+    #Initialize variables that will store our data
+    Total_months = 0
+    Net_pl = []
+    Pl_changes = []
 
-
-
-
-
-
-
-
-
-
+    for rows in csvreader:
+        Total_months += 1
+        Net_pl.append(rows[1])
 
 
-
-#print analysis
-print(["Financial Analysis"])
-print(["------------------------"])
-print([f"Total Months: {len(Total_months)}"])
-print([f"Net Total of Profit/Loss: ${sum(Net_pl)}"])
-print([f"Average Change: ${Pl_changes}"
-print([f"Greatest Increase in Profits: {} (${})"])
-print([f"Greatest Decrease in Profits: {} (${})"])
+print(Total_months)
