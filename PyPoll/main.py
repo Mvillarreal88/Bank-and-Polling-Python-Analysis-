@@ -13,11 +13,28 @@ with open(election_csvpath) as ele_file:
     header = next(csvreader)
 
 
-    Total_votes = []
-    candidates = []
+    Total_votes = 0
+    candidate_list = []
     perc_votes = []
+    khan_votes = 0
+    li_votes = 0
+    otooley_votes = 0
+    correy_votes = 0
 
-    for rows in csvreader:
-        Total_votes.append(rows[0])
+    for row in csvreader:
+        Total_votes += 1
 
-    sum_votes = len(Total_votes)
+        if row[2] not in candidate_list:
+            candidate_list.append(row[2])
+
+        elif row[2] == "Khan":
+            khan_votes += 1
+        
+        elif row[2] == "Correy":
+            correy_votes += 1
+        
+        elif row[2] == "Li":
+            li_votes += 1
+
+        elif row[2] == "O'Tooley":
+            otooley_votes += 1
