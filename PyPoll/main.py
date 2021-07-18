@@ -13,6 +13,11 @@ with open(election_csvpath) as ele_file:
     header = next(csvreader)
 
 
-Total_votes = 0
-candidates = []
-perc_votes = 
+    Total_votes = []
+    candidates = []
+    perc_votes = []
+
+    for rows in csvreader:
+        Total_votes.append(rows[0])
+
+    sum_votes = len(Total_votes)
