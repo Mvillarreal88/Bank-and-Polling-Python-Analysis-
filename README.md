@@ -1,6 +1,6 @@
 # PyBank and PyPoll Analysis
 
-Inb both the PyBank and PyPoll challenges we look to evaluate different records from the CSV file that we are pulling. We then look to extract necessary Data and present the results in a .txt file.
+In both the PyBank and PyPoll challenges we look to evaluate different records from the CSV file that we are pulling. We then look to extract necessary Data and present the results in a .txt file.
 
 ### For PyPoll we look to calculate the following
 
@@ -26,4 +26,4 @@ Inb both the PyBank and PyPoll challenges we look to evaluate different records 
 
 * The winner of the election based on popular vote.
 
-> - Matthew Villarreal
+- Matthew Villarreal
