@@ -15,7 +15,6 @@ with open(election_csvpath) as ele_file:
 
     Total_votes = 0
     candidate_list = []
-    perc_votes = []
     khan_votes = 0
     li_votes = 0
     otooley_votes = 0
@@ -38,3 +37,12 @@ with open(election_csvpath) as ele_file:
 
         elif row[2] == "O'Tooley":
             otooley_votes += 1
+
+
+    #Calculate percentages for each candidate
+
+    per_Khan = round(khan_votes/Total_votes * 100)
+    per_li = round(li_votes/Total_votes * 100) 
+    per_otooley = round(otooley_votes/Total_votes * 100)
+    per_correy = round(correy_votes/Total_votes * 100)
+
