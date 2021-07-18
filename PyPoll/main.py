@@ -63,11 +63,29 @@ with open(election_csvpath) as ele_file:
     #Printing the results of the election
     print(["Election Results"])
     print(["---------------------"])
-    print("Total Votes: " + Total_votes)
+    print(["Total Votes: " + str(Total_votes)])
     print(["---------------------"])
     print([f"Khan: {perc_Khan}% ({khan_votes})"])
     print([f"Li: {perc_li}% ({li_votes})"])
     print([f"Correy: {perc_correy}% ({correy_votes})"])
     print([f"O'Tooley: {perc_otooley}% ({otooley_votes})"])
     print(["---------------------"])
-    print("Winner: " + Winner)
+    print(["Winner: " + Winner])
+
+#creating variable for the output file
+out_file = os.path.join(".","analysis","pypoll_analysis.txt")
+
+#opening output file
+with open(out_file, "w", newline="") as analysis:
+    writer = csv.writer(analysis)
+    
+    writer.writerow(["Election Results"])
+    writer.writerow(["---------------------"])
+    writer.writerow(["Total Votes: " + str(Total_votes)])
+    writer.writerow(["---------------------"])
+    writer.writerow([f"Khan: {perc_Khan}% ({khan_votes})"])
+    writer.writerow([f"Li: {perc_li}% ({li_votes})"])
+    writer.writerow([f"Correy: {perc_correy}% ({correy_votes})"])
+    writer.writerow([f"O'Tooley: {perc_otooley}% ({otooley_votes})"])
+    writer.writerow(["---------------------"])
+    writer.writerow(["Winner: " + Winner])
