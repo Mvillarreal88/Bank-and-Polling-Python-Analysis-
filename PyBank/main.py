@@ -46,3 +46,20 @@ print([f"Net Total of Profit/Loss: $ {sum(Net_pl)}"])
 print([f"Average Change:  + {str(Average_PL)}"])
 print("Greatest Increase in Profits: " + str(Total_months[Pl_change.index(max(Pl_change))+1]) + " " + "$" + str(largest_increase))
 print("Greatest Decrease in Profits: " + str(Total_months[Pl_change.index(min(Pl_change))+1]) + " " + "$" + str(largest_decrease))
+
+
+#creating a variable for the output file
+out_file = os.path.join(".","Analysis","pybank_analysis.txt")
+
+#opening output file
+with open(out_file, "w", newline="") as analysis:
+    writer = csv.writer(analysis)
+    
+    writer.writerow(["Financial Analysis"])
+    writer.writerow(["------------------------"])
+    writer.writerow([f"Total Months: {Sum_months}"])
+    writer.writerow([f"Net Total of Profit/Loss: $ {sum(Net_pl)}"])
+    writer.writerow([f"Average Change:  + {str(Average_PL)}"])
+    writer.writerow(["Greatest Increase in Profits: " + str(Total_months[Pl_change.index(max(Pl_change))+1]) + " " + "$" + str(largest_increase)])
+    writer.writerow(["Greatest Decrease in Profits: " + str(Total_months[Pl_change.index(min(Pl_change))+1]) + " " + "$" + str(largest_decrease)])
+    
